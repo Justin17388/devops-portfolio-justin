@@ -1,0 +1,5 @@
+skip-check:
+  - CKV_AWS_53   # block public ACLs - incompatible with S3 website hosting
+  - CKV_AWS_54   # block public bucket policy - website requires public GET
+  - CKV_AWS_55   # ignore public ACLs - incompatible with website hosting
+  - CKV_AWS_56   # restrict public buckets - incompatible with website hosting
