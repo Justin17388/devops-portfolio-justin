@@ -1,0 +1,55 @@
+name: Terraform Validate & Plan
+
+on:
+  pull_request:
+    paths:
+      - 'projects/02-terraform-s3-static-site/**'
+  workflow_dispatch:
+
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.5
+
+      - name: Terraform fmt, init, and validate
+        working-directory: projects/02-terraform-s3-static-site
+        run: |
+          terraform fmt -check
+          terraform init -input=false
+          terraform validate
+
+      - name: Set up TFLint
+        uses: terraform-linters/setup-tflint@v4
+
+      - name: Run TFLint
+        working-directory: projects/02-terraform-s3-static-site
+        run: |
+          tflint --init
+          tflint
+
+      - name: Run Checkov (static security analysis)
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: projects/02-terraform-s3-static-site
+
+      - name: Terraform plan (requires AWS credentials)
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: projects/02-terraform-s3-static-site
+        env:
+          AWS_REGION: us-east-1
+        run: terraform plan -input=false

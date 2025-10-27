@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Pre-commit (all files)",
+      "type": "shell",
+      "command": "pre-commit run --all-files --show-diff-on-failure",
+      "problemMatcher": []
+    },
+    {
+      "label": "Pytest (Project 1)",
+      "type": "shell",
+      "command": "pytest -q projects/01-docker-flask-hello/app",
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker build (dev)",
+      "type": "shell",
+      "command": "docker build -t flask-hello:dev projects/01-docker-flask-hello",
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker run (dev)",
+      "type": "shell",
+      "command": "docker run --rm -p 5000:5000 flask-hello:dev",
+      "problemMatcher": []
+    }
+  ]
+}

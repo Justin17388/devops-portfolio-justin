@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Flask Hello (Project 1)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/01-docker-flask-hello/app/app.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
