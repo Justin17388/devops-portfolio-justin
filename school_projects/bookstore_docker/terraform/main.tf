@@ -85,6 +85,3 @@ resource "aws_instance" "bookstore" {
 
   tags = { Name = "Web Server of Bookstore" }
 }
-
-
-

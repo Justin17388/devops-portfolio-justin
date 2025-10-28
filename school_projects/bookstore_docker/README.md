@@ -19,4 +19,3 @@ The Bookstore API allows CRUD operations on a MySQL-backed database of books:
 ---
 
 ## 🧩 Architecture
-
