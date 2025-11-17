@@ -46,21 +46,32 @@ http://localhost/
 # GitHub Actions CI Pipeline
 
 -Runs flake8 linting
+
 -Builds the Docker image
+
 -Optionally pushes the image to a container registry
+
 -Ensures all pull requests pass checks before merging
 
 # Real-World Use Case
 
 -Packaging apps into portable containers
+
 -Automating testing and builds
+
 -Preparing services to run on ECS, EKS, EC2, or Kubernetes
+
 -Standardizing deployments across environments
 
 # Future Enhancements 
 
 -Multi-stage builds to shrink image size
+
 -Deployment to AWS ECS or EKS
+
 -Terraform IaC to provision infrastructure
+
 -A CloudWatch log configuration
+
 -Docker Compose for multi-container apps
+
