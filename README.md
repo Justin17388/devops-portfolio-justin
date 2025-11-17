@@ -22,16 +22,16 @@ AWS-certified Cloud & DevOps engineer with a background in process improvement, 
 | Reusable GitHub Actions | CI/CD, YAML, DRY workflows | Building reusable pipelines and enforcing checks on pull requests |
 | Kubernetes on kind | k8s, Kustomize | Deploying apps to a Kubernetes cluster, manifests & basic observability |
 
-## DigitalOcean Experience
+## Private Projects (available upon request)
 
-I have deployed multiple applications using DigitalOcean Droplets, including:
-- Creating and configuring Droplets from scratch
-- Setting up SSH access and firewall rules
-- Installing Docker, Python, and web services
-- Hosting Flask apps and small web APIs
-- Managing updates and basic hardening
+I am currently developing a production-ready web application deployed on DigitalOcean using:
+- Dockerized backend services
+- HTTPS certificates via Nginx + Certbot
+- Automated deployment pipelines
+- Cloud-native architecture with secure configuration
 
-DigitalOcean has been especially useful for quick prototypes and cloud practice environments outside AWS.
+Details are private until the project is fully complete, but I can discuss the architecture and implementation in an interview.
+
 
 
 > The `school_projects/` directory contains coursework from my DevOps program. The `projects/` directory contains curated projects I’ve refined to showcase for employers.
