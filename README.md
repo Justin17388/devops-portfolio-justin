@@ -1,9 +1,9 @@
 # Justin Shinn — Cloud &DevOps Portfolio
 -Remote Cloud/DevOps Engineer | AWS & Multi-Cloud | Infrastructure Automation & Containerization-
 
-AWS-certified Cloud Engineer with 12+ years improving systems, workflows, and cross-department processes—now building scalable, automated infrastructure with Terraform, Docker, DigitalOcean, and CI/CD. 
-
 **Target roles:** Cloud Engineer · Junior DevOps Engineer · Platform Engineer (entry-level)
+
+AWS-certified Cloud Engineer with 12+ years improving systems, workflows, and cross-department processes—now building scalable, automated infrastructure with Terraform, Docker, DigitalOcean, and CI/CD. 
 
 ## Tech Stack
 -Technologies: AWS (EC2, S3, IAM, VPC), Terraform, Docker, GitHub Actions, Linux, Bash/Python scripting, DigitalOcean.-
