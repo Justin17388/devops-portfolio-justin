@@ -24,7 +24,7 @@ Real-world containerized apps, infrastructure as code, and multi-cloud deploymen
 |--------|-------|----------------|
 | **Docker + Flask Hello** | Docker, GitHub Actions, testing | Containerizing a Python app, pushing image to registry, automated CI |
 | **Terraform S3 Static Site** | Terraform, AWS S3 | Provisioning AWS infrastructure with IaC, remote backend/state discipline |
-| **Reusable GitHub Actions** | CI/CD, YAML, DRY workflows | Building reusable pipelines and enforcing checks on pull requests |
+| **Reusable GitHub Actions** | CI/CD, YAML, DRY workflows, Ansible | Building reusable pipelines and enforcing checks on pull requests |
 | **Kubernetes on kind** | k8s, Kustomize | Deploying apps to a Kubernetes cluster, manifests & basic observability |
 
 ## Private Projects (available upon request)
