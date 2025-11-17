@@ -1,7 +1,45 @@
-# Justin Shinn — DevOps Portfolio
+# Justin Shinn — Cloud &DevOps Portfolio
+
+AWS-certified Cloud & DevOps engineer with a background in process improvement, automation, and cross-team collaboration. This portfolio highlights hands-on work with AWS, Terraform, Docker, CI/CD (GitHub Actions), and Kubernetes. I’ve built and deployed infrastructure across AWS and DigitalOcean, including EC2 instances, S3 static hosting, and DigitalOcean Droplets for quick deployments and testing environments.
+
+**Target roles:** Cloud Engineer · Junior DevOps Engineer · Platform Engineer (entry-level)
+
+## Tech Stack
+
+- **Cloud Platforms:** AWS (primary), DigitalOcean (Droplets, networking, firewall rules, deployments)
+- **IaC:** Terraform
+- **Containers:** Docker
+- **CI/CD:** GitHub Actions, pre-commit
+- **Languages:** Python, Bash
+- **Other:** Linux, Checkov, flake8
+
+## Featured Projects
+
+| Project | Focus | What it shows |
+|--------|-------|----------------|
+| Docker + Flask Hello | Docker, GitHub Actions, testing | Containerizing a Python app, pushing image to registry, automated CI |
+| Terraform S3 Static Site | Terraform, AWS S3 | Provisioning AWS infrastructure with IaC, remote backend/state discipline |
+| Reusable GitHub Actions | CI/CD, YAML, DRY workflows | Building reusable pipelines and enforcing checks on pull requests |
+| Kubernetes on kind | k8s, Kustomize | Deploying apps to a Kubernetes cluster, manifests & basic observability |
+
+## DigitalOcean Experience
+
+I have deployed multiple applications using DigitalOcean Droplets, including:
+- Creating and configuring Droplets from scratch
+- Setting up SSH access and firewall rules
+- Installing Docker, Python, and web services
+- Hosting Flask apps and small web APIs
+- Managing updates and basic hardening
+
+DigitalOcean has been especially useful for quick prototypes and cloud practice environments outside AWS.
 
 
-Hands‑on projects showing practical DevOps skills across Docker, CI/CD, IaC (Terraform), and Kubernetes. Each project is meant to highlight clear READMEs, testing abilities, and use of automations.
+> The `school_projects/` directory contains coursework from my DevOps program. The `projects/` directory contains curated projects I’ve refined to showcase for employers.
+
+
+## Links
+
+- [LinkedIn](https://www.linkedin.com/in/justin-m-shinn)
 
 ## Projects
 
