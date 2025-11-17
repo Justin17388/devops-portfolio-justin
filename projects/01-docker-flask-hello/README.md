@@ -14,10 +14,15 @@ Hands-on DevOps workflow: Build → Test → Package → Run
 # Tech Stack
 
 Language: Python 3
+
 Framework: Flask
+
 Containerization: Docker
+
 CI/CD: GitHub Actions
+
 Linting/Quality: flake8, pre-commit hooks
+
 
 # Project Architecture
 
