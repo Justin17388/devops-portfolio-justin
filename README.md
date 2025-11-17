@@ -49,5 +49,5 @@ Details are private until the project is fully complete, but I can discuss the a
 
 1. **Docker + Flask Hello** — containerize a tiny Flask app, add tests, and ship to GHCR with GitHub Actions.  
 2. **Terraform S3 Static Site** — provision an AWS S3 website + public bucket policy (+ optional CloudFront).  
-3. **Reusable GitHub Actions** — DRY pipelines via composite/reusable workflows.  
+3. **Reusable GitHub Actions** — workflow that runs ansible-lint on PRs and can optionally deploy on demand.  
 4. **Kubernetes on kind** — deploy the Flask app to a local kind cluster with Kustomize and add basic metrics.
