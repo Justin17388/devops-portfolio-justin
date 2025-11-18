@@ -1,0 +1,4 @@
+app_name: flask-hello
+container_image: "ghcr.io/justin17388/flask-hello:latest"  # <-- update if needed
+container_port: 5000
+host_port: 80

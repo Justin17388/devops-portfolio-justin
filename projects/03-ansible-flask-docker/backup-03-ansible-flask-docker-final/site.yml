@@ -1,0 +1,9 @@
+---
+- name: Install Docker & deploy Flask container
+  hosts: web
+  become: true
+  vars_files:
+    - group_vars/all.yml
+  roles:
+    - docker
+    - app

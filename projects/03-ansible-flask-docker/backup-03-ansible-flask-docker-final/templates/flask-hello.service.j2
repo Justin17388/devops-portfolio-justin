@@ -1,0 +1,13 @@
+[Unit]
+Description={{ app_name }} container
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=-/usr/bin/docker rm -f {{ app_name }}
+ExecStart=/usr/bin/docker run --name {{ app_name }} -p {{ host_port }}:{{ container_port }} {{ container_image }}
+ExecStop=/usr/bin/docker stop {{ app_name }}
+
+[Install]
+WantedBy=multi-user.target

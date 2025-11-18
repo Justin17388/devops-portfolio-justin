@@ -31,14 +31,14 @@ Real-world containerized apps, infrastructure as code, and multi-cloud deploymen
 
 I am currently developing a production-ready web application deployed on DigitalOcean using:
 
-- Dockerized backend services  
-- HTTPS certificates via Nginx + Certbot  
-- Automated deployment pipelines  
-- Cloud-native architecture with secure configuration  
+- Dockerized backend services
+- HTTPS certificates via Nginx + Certbot
+- Automated deployment pipelines
+- Cloud-native architecture with secure configuration
 
 Details are private until the project is fully complete, but I can discuss the architecture and implementation in an interview.
 
-> The `school_projects/` directory contains coursework from my DevOps program.  
+> The `school_projects/` directory contains coursework from my DevOps program.
 > The `projects/` directory contains curated projects I’ve refined to showcase for employers.
 
 ## Links
@@ -47,7 +47,7 @@ Details are private until the project is fully complete, but I can discuss the a
 
 ## Projects
 
-1. **Docker + Flask Hello** — containerize a tiny Flask app, add tests, and ship to GHCR with GitHub Actions.  
-2. **Terraform S3 Static Site** — provision an AWS S3 website + public bucket policy (+ optional CloudFront).  
-3. **Reusable GitHub Actions** — workflow that runs ansible-lint on PRs and can optionally deploy on demand.  
+1. **Docker + Flask Hello** — containerize a tiny Flask app, add tests, and ship to GHCR with GitHub Actions.
+2. **Terraform S3 Static Site** — provision an AWS S3 website + public bucket policy (+ optional CloudFront).
+3. **Reusable GitHub Actions** — workflow that runs ansible-lint on PRs and can optionally deploy on demand.
 4. **Kubernetes on kind** — deploy the Flask app to a local kind cluster with Kustomize and add basic metrics.

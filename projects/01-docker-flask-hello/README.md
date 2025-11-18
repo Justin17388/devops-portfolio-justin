@@ -68,7 +68,7 @@ http://localhost/
 
 -Standardizing deployments across environments
 
-# Future Enhancements 
+# Future Enhancements
 
 -Multi-stage builds to shrink image size
 
@@ -79,4 +79,3 @@ http://localhost/
 -A CloudWatch log configuration
 
 -Docker Compose for multi-container apps
-

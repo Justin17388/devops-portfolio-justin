@@ -1,0 +1,28 @@
+---
+- name: Install prerequisites (Amazon Linux/RHEL-family)
+  package:
+    name:
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+    state: present
+  when: ansible_os_family in ["RedHat", "Rocky", "Amazon"]
+
+- name: Install Docker (Amazon Linux)
+  package:
+    name: docker
+    state: present
+  when: ansible_distribution in ["Amazon", "Amazon Linux", "Amazon Linux AMI", "Rocky", "AlmaLinux", "RedHat"]
+
+- name: Install Docker (Debian/Ubuntu)
+  apt:
+    name: docker.io
+    update_cache: yes
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Ensure docker service enabled & started
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
