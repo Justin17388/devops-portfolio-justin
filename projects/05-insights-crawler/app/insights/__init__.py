@@ -1,0 +1,1 @@
+# Makes "insights" a package.

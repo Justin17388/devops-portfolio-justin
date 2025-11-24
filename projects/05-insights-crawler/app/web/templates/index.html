@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Justin Shinn's Sample Crawler</title>
+    <style>
+      body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; }
+      .container { max-width: 1100px; margin: 0 auto; }
+      h1 { margin-bottom: 0.5rem; }
+      form { margin-bottom: 2rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+      label { font-weight: 600; display: block; margin-top: 0.75rem; }
+      input[type="text"], input[type="number"] {
+        width: 100%; padding: 0.4rem; margin-top: 0.25rem; box-sizing: border-box;
+      }
+      .inline { display: flex; gap: 1rem; flex-wrap: wrap; }
+      .inline > div { flex: 1; min-width: 220px; }
+      button {
+        margin-top: 1rem; padding: 0.5rem 1rem;
+        border: none; border-radius: 4px;
+        background: #2563eb; color: white; font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover { background: #1d4ed8; }
+      table { border-collapse: collapse; width: 100%; margin-top: 1rem; font-size: 0.9rem; }
+      th, td { border: 1px solid #ccc; padding: 0.4rem; vertical-align: top; }
+      th { background: #f3f4f6; }
+      .error { color: #b91c1c; font-weight: 600; margin-bottom: 1rem; }
+      .pill {
+        display: inline-block; padding: 0.1rem 0.4rem; border-radius: 999px;
+        background: #e5e7eb; margin-right: 0.25rem; font-size: 0.75rem;
+      }
+      .actions { margin-top: 0.75rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+      .download-link { font-size: 0.9rem; }
+      .mode-row { margin-top: 0.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Justin Shinn's Sample Crawler</h1>
+      <p>
+        Topic-focused, ethical web spider with two modes:
+        <strong>URLs mode</strong> and <strong>Search bootstrap</strong>.
+        Supports Turbo (async) crawling and CSV export.
+      </p>
+
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+
+      <form method="post">
+        <div class="mode-row">
+          <label style="font-weight:400; margin-top: 0;">
+            <input type="radio" name="mode" value="urls" checked>
+            Use URLs mode (you provide start URLs)
+          </label>
+          <label style="font-weight:400;">
+            <input type="radio" name="mode" value="search">
+            Use search bootstrap (keywords → URLs via ddgs)
+          </label>
+        </div>
+
+        <label>
+          Start URLs (comma-separated) — used in URLs mode, or overridden by search in search mode
+          <input type="text" name="start_urls" placeholder="https://weworkremotely.com/remote-jobs, https://remoteok.com">
+        </label>
+
+        <label>
+          Search keywords (optional) — used when in search mode
+          <input type="text" name="search_keywords" placeholder="devops aws terraform remote">
+        </label>
+
+        <label>
+          Allowed domains (optional, comma-separated)
+          <input type="text" name="allowed_domains" placeholder="weworkremotely.com, remoteok.com">
+        </label>
+
+        <div class="inline">
+          <div>
+            <label>
+              Required keywords (comma-separated)
+              <input type="text" name="required_keywords" placeholder="devops, cloud, aws">
+            </label>
+          </div>
+          <div>
+            <label>
+              Bonus keywords (comma-separated)
+              <input type="text" name="bonus_keywords" placeholder="remote, kubernetes, terraform">
+            </label>
+          </div>
+        </div>
+
+        <div class="inline">
+          <div>
+            <label>
+              Max depth
+              <input type="number" name="max_depth" value="1" min="0">
+            </label>
+          </div>
+          <div>
+            <label>
+              Max pages
+              <input type="number" name="max_pages" value="50" min="1">
+            </label>
+          </div>
+          <div>
+            <label>
+              Min score
+              <input type="number" name="min_score" value="2" min="0">
+            </label>
+          </div>
+        </div>
+
+        <div class="inline">
+          <div>
+            <label>
+              Request delay (seconds)
+              <input type="number" step="0.1" name="request_delay_seconds" value="1.0" min="0">
+            </label>
+          </div>
+          <div>
+            <label>
+              Max search results (for search mode)
+              <input type="number" name="max_search_results" value="10" min="1">
+            </label>
+          </div>
+          <div style="display:flex; align-items:center; margin-top: 1.8rem;">
+            <label style="font-weight:400;">
+              <input type="checkbox" name="same_domain_only" checked>
+              Only follow links within the same domain
+            </label>
+          </div>
+        </div>
+
+        <div class="inline">
+          <div style="display:flex; align-items:center; margin-top: 0.5rem;">
+            <label style="font-weight:400;">
+              <input type="checkbox" name="turbo">
+              Turbo mode (async, faster)
+            </label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Run Crawl</button>
+          {% if results %}
+            <a class="download-link" href="/download">⬇ Download CSV</a>
+          {% endif %}
+        </div>
+      </form>
+
+      {% if results %}
+        <h2>Results ({{ results|length }} pages)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Score</th>
+              <th>Matched keywords</th>
+              <th>Snippet</th>
+              <th>Robots?</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in results %}
+              <tr>
+                <td><a href="{{ r.url }}" target="_blank">{{ r.url }}</a></td>
+                <td>{{ r.title }}</td>
+                <td>{{ r.status_code or "" }}</td>
+                <td>{{ "%.2f"|format(r.score) }}</td>
+                <td>
+                  {% for kw in r.matched_required %}
+                    <span class="pill">{{ kw }}</span>
+                  {% endfor %}
+                  {% for kw in r.matched_bonus %}
+                    <span class="pill">{{ kw }}</span>
+                  {% endfor %}
+                </td>
+                <td>{{ r.snippet }}</td>
+                <td>{{ "skipped" if r.skipped_by_robots else "" }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+  </body>
+</html>

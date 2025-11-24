@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+tqdm
+pyyaml
+flask
+aiohttp
+ddgs
