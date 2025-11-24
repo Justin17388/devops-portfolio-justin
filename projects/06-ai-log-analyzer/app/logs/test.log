@@ -1,0 +1,5 @@
+2025-11-24 14:04:55 ERROR Database connection failed: timeout connecting to PostgreSQL on port 5432
+2025-11-24 14:04:56 WARNING Retrying request for user authentication
+2025-11-24 14:04:58 ERROR Authentication service responded with 503 Service Unavailable
+2025-11-24 14:05:01 INFO   Attempting to restart authentication microservice
+2025-11-24 14:05:05 CRITICAL Worker thread crashed due to unhandled exception: NullReferenceError
