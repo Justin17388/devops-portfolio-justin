@@ -1,20 +1,39 @@
 # 🧠 Self-Hosted AI DevOps Assistant Homelab
 
 ## Overview
-This project documents the conversion of a legacy Sony Vaio laptop into a fully functional Linux-based AI homelab server. The system hosts a locally running large language model (LLM) for coding assistance and infrastructure troubleshooting, accessible via a web interface across the local network.
 
-The goal was to create a cost-effective, private AI assistant while gaining hands-on experience with Linux, Docker, networking, and system administration.
+This project transforms a legacy Sony Vaio laptop into a self-hosted AI-powered DevOps homelab server. The system runs a locally hosted large language model (LLM) using Ollama, paired with a Dockerized Open WebUI frontend for browser-based interaction.
+
+The platform enables private, cost-free AI-assisted coding and log analysis while demonstrating hands-on experience with Linux system administration, containerization, networking, and service configuration. Remote access is securely provided through Tailscale, allowing the system to function as a lightweight, always-on infrastructure node accessible from anywhere.
 
 ---
 
 ## 🔧 Tech Stack
 
-- **OS:** Linux Mint XFCE  
-- **Containerization:** Docker  
-- **AI Backend:** Ollama  
-- **Web Interface:** Open WebUI  
-- **Networking:** Local LAN access  
-- **System Optimization:** Swap + zRAM  
+### 🖥️ Infrastructure & OS
+- Linux Mint XFCE (lightweight desktop environment)
+- Sony Vaio E Series (repurposed legacy hardware)
+
+### 🐳 Containerization & Services
+- Docker
+- Open WebUI (containerized frontend)
+
+### 🧠 AI / Machine Learning
+- Ollama (local LLM runtime)
+- qwen2.5-coder / tinyllama (local models)
+
+### 🌐 Networking & Remote Access
+- Tailscale (secure remote access VPN)
+- Local LAN networking
+- SSH (OpenSSH server)
+
+### ⚙️ System Optimization
+- Swap (virtual memory expansion)
+- zRAM (compressed memory)
+
+### 🛠️ System Management
+- systemd (service management)
+- Bash / Linux CLI
 
 ---
 
@@ -27,7 +46,6 @@ Ollama (Local Service)
 ↓
 LLM Model (qwen2.5-coder / tinyllama)
 
-
 ---
 
 ## 🚀 Features
@@ -38,7 +56,9 @@ LLM Model (qwen2.5-coder / tinyllama)
 - Persistent services with auto-restart
 - Optimized for low-memory hardware
 - Headless operation (lid closed, remote access)
-
+- Secure remote access via Tailscale
+- Browser-based AI interface accessible from anywhere
+  
 ---
 
 ## 🧪 Key Learning Areas
