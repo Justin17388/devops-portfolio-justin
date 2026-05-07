@@ -97,6 +97,15 @@ LLM Model (qwen2.5-coder / tinyllama)
 ### Docker Containers
 ![Docker](images/docker-containers.png)
 
+### System Monitoring
+![System Usage](images/system-usage.png)
+
+### Ollama Models
+![Models](images/ollama-models.png)
+
+### Remote SSH Access
+![SSH](images/ssh-access.png)
+
 ---
 
 ## 📈 Future Improvements
