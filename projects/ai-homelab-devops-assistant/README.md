@@ -110,12 +110,30 @@ LLM Model (qwen2.5-coder / tinyllama)
 
 ## 📈 Future Improvements
 
-- Reverse proxy with Nginx
-- HTTPS with Let's Encrypt
-- Authentication hardening
-- Remote access via VPN or tunneling
-- Automated log ingestion and analysis
-- Monitoring stack (Prometheus + Grafana)
+### 🌐 Networking & Access
+- Implement Nginx reverse proxy for cleaner routing and service management
+- Configure HTTPS using Let's Encrypt for secure browser access
+- Expand secure remote access with domain-based routing and access control
+
+### 🔐 Security & Hardening
+- Implement authentication layer for Open WebUI access
+- Transition SSH to key-based authentication and disable password login
+- Apply firewall rules and service-level access restrictions
+
+### 🧠 AI & Automation
+- Integrate automated log ingestion for real-time analysis
+- Develop scripts to feed system and application logs into the LLM
+- Explore lightweight model optimization for improved performance on low-resource hardware
+
+### 📊 Observability & Monitoring
+- Deploy Prometheus and Grafana for system and container monitoring
+- Track CPU, memory, and service health metrics
+- Implement alerting for system thresholds and service failures
+
+### ⚙️ Infrastructure Evolution
+- Containerize additional services for modular expansion
+- Convert system into a fully headless, always-on homelab node
+- Explore multi-node expansion using additional devices connected via Tailscale
 
 ---
 
